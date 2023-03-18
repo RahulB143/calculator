@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+
+		.container {
+			margin: 0 auto;
+			width: 300px;
+			background-color: #a29e9e;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 2px 5px 10px rgba(0,0,0,0.2);
+     text-align: center;
+		}
+
+		input[type="text"] {
+			width: 64%;
+      margin-right: 5px;
+			margin-bottom: 20px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			font-size: 18px;
+      background-color: #e6e6e6;
+		}
+
+		input[type="button"] {
+			width: 23%;
+			padding: 10px;
+			margin: 5px;
+			font-size: 18px;
+			border-radius: 5px;
+			border: none;
+			background-color: #e6e6e6;
+			box-shadow: 0 0 5px rgba(0,0,0,0.2);
+			cursor: pointer;
+      width: 20%;
+		}
+
+		input[type="button"]:hover {
+			background-color: #d9d9d9;
+		}
+    
+	</style>
+</head>
+<body>
+	<h1>Calculator</h1>
+	<div class="container">
+		<input type="text" id="result" readonly>
+    <input type="button" value="C" onclick="clearResult()">
+		<input type="button" value="1" onclick="insert('1')">
+		<input type="button" value="2" onclick="insert('2')">
+		<input type="button" value="3" onclick="insert('3')">
+		<input type="button" value="+" onclick="insert('+')">
+		<input type="button" value="4" onclick="insert('4')">
+		<input type="button" value="5" onclick="insert('5')">
+		<input type="button" value="6" onclick="insert('6')">
+		<input type="button" value="-" onclick="insert('-')">
+		<input type="button" value="7" onclick="insert('7')">
+		<input type="button" value="8" onclick="insert('8')">
+		<input type="button" value="9" onclick="insert('9')">
+		<input type="button" value="*" onclick="insert('*')">
+		<input type="button" value="." onclick="insert('.')">
+		<input type="button" value="0" onclick="insert('0')">
+    <input type="button" value="=" onclick="calculate()">
+		<input type="button" value="/" onclick="insert('/')">
+    
+	</div>
+
+	<script>
+		function insert(value) {
+			document.getElementById('result').value += value;
+		}
+
+		function clearResult() {
+			document.getElementById('result').value = '';
+		}
+
+		function calculate() {
+			let result = eval(document.getElementById('result').value);
+			document.getElementById('result').value = result;
+		}
+	</script>
+</body>
+</html>
